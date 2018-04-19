@@ -1,0 +1,23 @@
+iaddl V, rb
+
+Fetch:
+    icode:ifun <— M1[PC]    //read byte from instruction
+    rA:rB <— M1[PC + 1]    //register byte
+    valC <— M4[PC+2]        //constant
+    valP <— PC+6        //next PC
+
+Decode:
+    valB <— R[rB]        //read operation B
+
+Execute:
+    valB <— valB + valC    //perform
+    set CC            //set condition
+register
+
+Memory:
+
+Write Back:
+    R[rB] <— valE        //write back result from operation
+
+PC update:
+    PC <— valP            //update PC

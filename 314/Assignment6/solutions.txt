@@ -1,0 +1,2 @@
+3 pipelines are required:
+After we add edx and eax, we load 0 into edx. edx will still technically be the same number it was previously, rather than 0 until the write back stage of the line code. 3 piplines are required because it allows the next addl to have time to fetch the new values of edx and eax.
