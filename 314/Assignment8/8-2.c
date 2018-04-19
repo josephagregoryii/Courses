@@ -1,46 +1,4 @@
-//
-//  8-2.c
-//  314 project 8
-//
-//  Created by Joseph Gregory - Groechelli on 3/13/18.
-//  Copyright © 2018 Joseph Gregory - Groechelli. All rights reserved.
-//
-/*
-                                                            Cache Block
-                                                    _____________________________
- 2) direct-mapped cache                             | Byte | Byte | Byte | Byte |
-    s = 16 = 2^4                                    |   0  |   1  |   2  |   3  |
- m = # of bits in memory address = 32bits       000 -----------------------------
-                                                011
-    t = 26 |    s=4   |   b= 31-26-4=2  |       102
- ________________________________________       113
- |m-1 = 31 |set index | byte offset into|           unsigned int input = x3210a233; = 0011 0001 0000 0110 0010 0011 0011
- |tag bits |bits      | our cache block |           unsigned int tag = input >> 6;//leave input the same, dont alter input
- ________________________________________           unsigned into setId = ______;
-                                                    unsigned int byteoffset = ______;
- 00110 0001 0000 0110 0010 0011 0011
-                             \   /\
-                              \ /  \
-                              1100  \
-                                |    unsigned int byteoffset = 3
-                    unsigned into setId = 12
- 
- struct {                           _________________________________
- int c;  \                          |                               |
- int m;   \ 16 bytes                |   16 bites    |   16 bites    |   32 bites
- int y;   /                         |                               |
- int k;  /                          ---------------------------------
-                                    | square[0][1]  |  square[0][0]
- for (i = 0; i < 16; i++){
-    for ( j = 0; j< 16; j++){
- 'miss'  square[i][j].c = 1;
- 'hit'   square[i][j].m = 0;
- 'hit'   ''        ''.y = 0;
- 'hit'   ''        ''.k = 0;
-    }
- }
- 
- */
+//Cache Simulator
 
 #include <stdio.h>
 #include <stdlib.h>
